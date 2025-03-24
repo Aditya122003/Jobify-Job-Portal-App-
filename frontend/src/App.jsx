@@ -14,6 +14,7 @@ import AdminJobs from "./components/admin/AdminJobs";
 import PostJob from './components/admin/PostJob'
 import Applicants from './components/admin/Applicants'
 import ProtectedRoute from './components/admin/ProtectedRoute'
+import AboutUs from './components/shared/aboutUs';
 
 
 const appRouter = createBrowserRouter([
@@ -45,30 +46,34 @@ const appRouter = createBrowserRouter([
     path: "/profile",
     element: <Profile />
   },
-  // admin ke liye yha se start hoga
+  {
+    path: '/aboutUs', 
+    element: <AboutUs />,
+},
+ 
   {
     path:"/admin/companies",
     element: <ProtectedRoute><Companies/></ProtectedRoute>
   },
   {
     path:"/admin/companies/create",
-    element: <ProtectedRoute><CompanyCreate/></ProtectedRoute> 
+    element: <ProtectedRoute><CompanyCreate/></ProtectedRoute>
   },
   {
     path:"/admin/companies/:id",
-    element:<ProtectedRoute><CompanySetup/></ProtectedRoute> 
+    element:<ProtectedRoute><CompanySetup/></ProtectedRoute>
   },
   {
     path:"/admin/jobs",
-    element:<ProtectedRoute><AdminJobs/></ProtectedRoute> 
+    element:<ProtectedRoute><AdminJobs/></ProtectedRoute>
   },
   {
     path:"/admin/jobs/create",
-    element:<ProtectedRoute><PostJob/></ProtectedRoute> 
+    element:<ProtectedRoute><PostJob/></ProtectedRoute>
   },
   {
     path:"/admin/jobs/:id/applicants",
-    element:<ProtectedRoute><Applicants/></ProtectedRoute> 
+    element:<ProtectedRoute><Applicants/></ProtectedRoute>
   },
 
 ])
@@ -82,3 +87,8 @@ function App() {
 }
 
 export default App
+
+
+
+
+
